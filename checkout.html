@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оформление заказа — Lamoda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body class="checkout-page">
+    <header class="checkout-header">
+      <div class="checkout-header__inner">
+        <a href="index.html" class="checkout-header__logo" aria-label="Lamoda — главная">
+          <img src="assets/logo-lamoda.png" alt="Lamoda" width="168" height="28" />
+        </a>
+        <div class="checkout-header__promos">
+          <div class="checkout-header__promo">
+            <img src="assets/checkout-figma-icon-delivery.svg" alt="" width="32" height="32" />
+            <p>
+              Удобная доставка<br />
+              в ближайший пункт выдачи
+            </p>
+          </div>
+          <div class="checkout-header__promo">
+            <img src="assets/checkout-figma-icon-hanger.svg" alt="" width="32" height="32" />
+            <p>
+              Примеряйте и оплачивайте<br />
+              только то, что вам понравилось
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="checkout-shell">
+      <div class="checkout-shell__grid">
+        <div class="checkout-form-col">
+          <a href="#" class="checkout-back">
+            <img src="assets/checkout-figma-arrow-back.svg" alt="" width="16" height="16" />
+            В корзину
+          </a>
+          <h1 class="checkout-h1">Оформление заказа</h1>
+
+          <div class="checkout-tabs" role="tablist" aria-label="Способ получения">
+            <button type="button" class="checkout-tabs__btn checkout-tabs__btn--active" role="tab" aria-selected="true">
+              В пункт выдачи
+            </button>
+            <button type="button" class="checkout-tabs__btn" role="tab" aria-selected="false">Курьером</button>
+          </div>
+
+          <button type="button" class="checkout-pickup">
+            <span class="checkout-pickup__icon" aria-hidden="true">
+              <img src="assets/checkout-figma-icon-hanger.svg" alt="" width="32" height="40" />
+            </span>
+            <span class="checkout-pickup__text">
+              <span class="checkout-pickup__title">Пункт выдачи Lamoda | Москва | ул. Пяловская, д. 10</span>
+              <span class="checkout-pickup__meta">пн-вс: 10:00-22:00, срок хранения – 4 дня</span>
+            </span>
+            <img class="checkout-pickup__chev" src="assets/checkout-figma-chevron-right.svg" alt="" width="24" height="24" />
+          </button>
+
+          <section class="checkout-block" aria-labelledby="checkout-date-title">
+            <h2 id="checkout-date-title" class="checkout-block__title">Дата доставки</h2>
+            <p class="checkout-block__hint">Доступна примерка</p>
+            <div class="checkout-date-chips" role="radiogroup" aria-label="Дата">
+              <label class="checkout-chip">
+                <input type="radio" name="delivery-date" value="1" checked class="checkout-chip__input" />
+                <span>29 апр, завтра</span>
+              </label>
+              <label class="checkout-chip">
+                <input type="radio" name="delivery-date" value="2" class="checkout-chip__input" />
+                <span>30 апр, чт</span>
+              </label>
+              <label class="checkout-chip">
+                <input type="radio" name="delivery-date" value="3" class="checkout-chip__input" />
+                <span>1 мая, пт</span>
+              </label>
+              <label class="checkout-chip">
+                <input type="radio" name="delivery-date" value="4" class="checkout-chip__input" />
+                <span>2 мая, сб</span>
+              </label>
+            </div>
+            <p class="checkout-delivery-note">
+              <span class="checkout-delivery-note__free">Бесплатно</span> при оплате сразу<br />
+              или при выкупе от 4600 ₽<br />
+              379 ₽ в остальных случаях
+            </p>
+          </section>
+
+          <section class="checkout-block checkout-block--pay" aria-labelledby="checkout-pay-title">
+            <h2 id="checkout-pay-title" class="checkout-block__title">Способ оплаты</h2>
+
+            <div class="checkout-wallet-promo">
+              <span class="checkout-la-mark checkout-la-mark--promo" aria-hidden="true">la</span>
+              <p class="checkout-wallet-promo__text">Выберите Кошелёк сейчас и заберите скидку 3%</p>
+              <button type="button" class="checkout-link-more">Подробнее</button>
+              <button type="button" class="checkout-pill">Сразу</button>
+            </div>
+
+            <div class="checkout-pay-grid">
+              <label class="checkout-pay-card">
+                <input type="radio" name="pay" value="wallet" class="checkout-pay-card__input" checked />
+                <span class="checkout-pay-card__body">
+                  <span class="checkout-pay-card__row1">
+                    <span class="checkout-pay-card__name">
+                      Кошелёк
+                      <span class="checkout-pay-card__badge">−3%</span>
+                    </span>
+                    <span class="checkout-la-mark checkout-la-mark--card" aria-hidden="true">la</span>
+                  </span>
+                  <span class="checkout-pay-card__green">доставка 0 ₽</span>
+                </span>
+              </label>
+
+              <label class="checkout-pay-card">
+                <input type="radio" name="pay" value="sbp" class="checkout-pay-card__input" />
+                <span class="checkout-pay-card__body">
+                  <span class="checkout-pay-card__row1">
+                    <span class="checkout-pay-card__name">СБП онлайн</span>
+                    <img src="assets/checkout-figma-sbp.svg" alt="" width="24" height="24" />
+                  </span>
+                  <span class="checkout-pay-card__green">доставка 0 ₽</span>
+                </span>
+              </label>
+
+              <label class="checkout-pay-card checkout-pay-card--tall">
+                <input type="radio" name="pay" value="card" class="checkout-pay-card__input" />
+                <span class="checkout-pay-card__body">
+                  <span class="checkout-pay-card__row1">
+                    <span class="checkout-pay-card__name">Картой онлайн</span>
+                    <span class="checkout-pay-card__icon24">
+                      <img src="assets/checkout-figma-card.svg" alt="" width="24" height="24" />
+                    </span>
+                  </span>
+                  <span class="checkout-pay-card__green">доставка 0 ₽</span>
+                  <span class="checkout-pay-card__muted">Вернем деньги, если товары не подойдут.</span>
+                </span>
+              </label>
+
+              <label class="checkout-pay-card checkout-pay-card--split">
+                <input type="radio" name="pay" value="split" class="checkout-pay-card__input" />
+                <span class="checkout-pay-card__body">
+                  <span class="checkout-pay-card__row1">
+                    <span class="checkout-pay-card__name">Предоплата в Сплит</span>
+                    <img src="assets/checkout-figma-split.png" alt="" width="24" height="24" />
+                  </span>
+                  <span class="checkout-pay-card__muted checkout-pay-card__muted--split"
+                    >25% сегодня, далее 3 платежа раз в две недели</span
+                  >
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <section class="checkout-block" aria-labelledby="checkout-recipient-title">
+            <h2 id="checkout-recipient-title" class="checkout-block__title">Кто заберет заказ?</h2>
+            <button type="button" class="checkout-recipient">
+              <img src="assets/checkout-figma-user.svg" alt="" width="32" height="32" />
+              <span class="checkout-recipient__info">
+                <span class="checkout-recipient__name">Тимофей Самущик</span>
+                <span class="checkout-recipient__phone">+7 (977) 123-45-67</span>
+              </span>
+              <img src="assets/checkout-figma-chevron-down.svg" alt="" width="24" height="24" />
+            </button>
+          </section>
+        </div>
+
+        <aside class="checkout-aside" aria-label="Ваш заказ">
+          <div class="checkout-aside__top">
+            <h2 class="checkout-aside__title">Ваш заказ</h2>
+            <div class="checkout-aside__thumb-wrap">
+              <img
+                class="checkout-aside__thumb"
+                src="assets/checkout-figma-product.jpg"
+                alt=""
+                width="64"
+                height="93"
+              />
+            </div>
+          </div>
+          <div class="checkout-aside__panel">
+            <div class="checkout-aside__row">
+              <span>1 товар</span>
+              <span>8&nbsp;999 ₽</span>
+            </div>
+            <div class="checkout-aside__row checkout-aside__row--discount">
+              <span class="checkout-aside__discount-label">
+                Скидка
+                <img src="assets/checkout-figma-info.svg" alt="" width="16" height="16" />
+              </span>
+              <span class="checkout-aside__discount-val">−2&nbsp;519 ₽</span>
+            </div>
+            <div class="checkout-aside__row checkout-aside__row--delivery">
+              <span>Доставка</span>
+              <span>бесплатно</span>
+            </div>
+            <div class="checkout-aside__total">
+              <span>Итого</span>
+              <span>6&nbsp;480 ₽</span>
+            </div>
+            <button type="button" class="checkout-aside__cta js-checkout-await-open">Перейти к оплате</button>
+            <p class="checkout-aside__legal">
+              Нажимая «Перейти к оплате», вы соглашаетесь с
+              <a href="#" class="checkout-aside__legal-link">офертой</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="checkout-await-modal" class="topup-modal" hidden>
+      <div class="topup-modal__backdrop js-checkout-await-close" tabindex="-1"></div>
+      <div
+        class="topup-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkout-await-modal-title"
+      >
+        <button type="button" class="topup-modal__close js-checkout-await-close" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="topup-modal__body">
+          <div class="topup-modal__hero">
+            <div class="topup-modal__spinner" role="status" aria-label="Ожидание оплаты">
+              <div class="topup-modal__spinner-ring" aria-hidden="true">
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+              </div>
+            </div>
+            <h2 id="checkout-await-modal-title" class="topup-modal__title">Ждём оплату</h2>
+            <p class="topup-modal__subtitle">
+              Когда деньги придут на Lamoda Кошелёк, они сразу спишутся для оплаты заказа
+            </p>
+          </div>
+          <h3 class="topup-modal__section-title">Как пополнить Lamoda Кошелёк</h3>
+          <div class="topup-modal__steps">
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 1</p>
+              <p class="topup-modal__step-text">
+                В приложении вашего банка выберите перевод по номеру телефона или СБП и введите свой номер телефона
+                <strong>+7 (977) 123-45-67</strong>
+              </p>
+            </div>
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 2</p>
+              <p class="topup-modal__step-text">
+                Найдите и выберите банк получателя <strong>Монета</strong> или <strong>НКО Монета</strong>
+              </p>
+            </div>
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 3</p>
+              <p class="topup-modal__step-text">
+                Введите сумму от <strong>6&nbsp;480&nbsp;₽</strong> и переведите её на Кошелёк
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <button type="button">Возврат</button>
+        <button type="button">Центр поддержки Lamoda</button>
+        <button type="button">Часто задаваемые вопросы</button>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var awaitModal = document.getElementById("checkout-await-modal");
+        var awaitOpeners = document.querySelectorAll(".js-checkout-await-open");
+        var awaitClosers = document.querySelectorAll(".js-checkout-await-close");
+        var lastFocusAwait = null;
+
+        function refreshScrollLock() {
+          document.body.classList.toggle(
+            "modal-scroll-lock",
+            awaitModal && !awaitModal.hidden
+          );
+        }
+
+        function openAwaitModal() {
+          if (!awaitModal) return;
+          lastFocusAwait = document.activeElement;
+          awaitModal.hidden = false;
+          refreshScrollLock();
+          var closeBtn = awaitModal.querySelector(".topup-modal__close");
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeAwaitModal() {
+          if (!awaitModal || awaitModal.hidden) return;
+          awaitModal.hidden = true;
+          refreshScrollLock();
+          if (lastFocusAwait && typeof lastFocusAwait.focus === "function") {
+            lastFocusAwait.focus();
+          }
+        }
+
+        awaitOpeners.forEach(function (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            openAwaitModal();
+          });
+        });
+        awaitClosers.forEach(function (el) {
+          el.addEventListener("click", closeAwaitModal);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key !== "Escape") return;
+          if (awaitModal && !awaitModal.hidden) closeAwaitModal();
+        });
+      })();
+    </script>
+  </body>
+</html>

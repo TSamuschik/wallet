@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lamoda Кошелёк</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-top">
+          <div class="header-top__left">
+            <button type="button" class="btn-ghost">
+              Мужчинам
+              <img src="assets/chevron-down.svg" alt="" width="16" height="16" />
+            </button>
+            <button type="button" class="btn-ghost">Москва</button>
+          </div>
+          <div class="header-top__center">
+            <button type="button" class="logo-btn" aria-label="Lamoda — главная">
+              <img src="assets/logo-lamoda.png" alt="Lamoda" width="168" height="28" />
+            </button>
+          </div>
+          <div class="header-top__right">
+            <button type="button" class="icon-link" aria-label="Профиль">
+              <img src="assets/icon-profile.svg" alt="" />
+            </button>
+            <button type="button" class="icon-link" aria-label="Избранное">
+              <img src="assets/icon-heart.svg" alt="" />
+            </button>
+            <a href="checkout.html" class="icon-link" aria-label="Корзина — оформление заказа">
+              <img src="assets/icon-bag.svg" alt="" />
+              <span class="badge-count">1</span>
+            </a>
+          </div>
+        </div>
+        <div class="header-nav-row">
+          <nav class="menubar" aria-label="Каталог">
+            <button type="button">Идеи</button>
+            <button type="button">Новинки</button>
+            <button type="button">Одежда</button>
+            <button type="button">Обувь</button>
+            <button type="button">Аксессуары</button>
+            <button type="button">Бренды</button>
+            <button type="button">Премиум</button>
+            <button type="button">Спорт</button>
+            <button type="button">Красота</button>
+            <button type="button">Дом</button>
+          </nav>
+          <div class="search-block">
+            <div class="search-input-wrap">
+              <span>Товар, бренд или артикул</span>
+            </div>
+            <button type="button" class="search-submit" aria-label="Поиск">
+              <img src="assets/search.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="main-grid">
+        <div class="main-grid__left">
+          <section class="balance-card" aria-labelledby="balance-heading">
+            <p class="balance-card__label" id="balance-heading">Баланс Кошелька</p>
+            <p class="balance-card__amount">8&nbsp;000&nbsp;₽</p>
+            <div class="balance-card__actions">
+              <button type="button" class="btn-primary js-topup-modal-open">Пополнить</button>
+              <button type="button" class="btn-secondary js-wallet-levels-modal-open">Вывести</button>
+            </div>
+          </section>
+
+          <section aria-labelledby="points-title">
+            <h2 class="section-title" id="points-title">Баллы</h2>
+            <div class="panel">
+              <p class="points-panel__label">Доступно</p>
+              <div class="points-row">
+                <img class="points-row__icon" src="assets/icon-chevron.svg" alt="" />
+                <span class="points-row__value">350</span>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="level-title">
+            <h2 class="section-title" id="level-title">Уровень кошелька</h2>
+            <div class="panel level-panel">
+              <div class="level-panel__text">
+                <strong>Базовый</strong>
+                <span>Повысьте уровень Кошелька, чтобы&nbsp;получить больше преимуществ</span>
+              </div>
+              <button type="button" class="btn-outline-sm js-wallet-levels-modal-open">Повысить уровень</button>
+            </div>
+          </section>
+
+          <section aria-labelledby="ops-title">
+            <div class="ops-head">
+              <h2 class="section-title" id="ops-title">Операции по Кошельку</h2>
+              <button type="button" class="link-all js-ops-show-all" aria-expanded="false" aria-controls="ops-extra">
+                Все
+                <img src="assets/icon-arrow.svg" alt="" />
+              </button>
+            </div>
+            <p class="ops-date">22 апреля</p>
+            <article class="tx-card">
+              <div class="tx-card__icon-wrap">
+                <img src="assets/img-sbp.png" alt="" />
+              </div>
+              <span class="tx-card__title">Пополнение (СБП)</span>
+              <span class="tx-card__amount tx-card__amount--pos">+2&nbsp;700&nbsp;₽</span>
+            </article>
+            <p class="ops-date">31 марта</p>
+            <article class="tx-card">
+              <div class="tx-card__icon-wrap tx-card__icon-wrap--order">
+                <img src="assets/img-order.png" alt="" />
+              </div>
+              <span class="tx-card__title">Оплата заказа</span>
+              <span class="tx-card__amount tx-card__amount--neg">-4&nbsp;000&nbsp;₽</span>
+            </article>
+            <article class="tx-card">
+              <div class="tx-card__icon-wrap">
+                <img src="assets/img-sbp.png" alt="" />
+              </div>
+              <span class="tx-card__title">Пополнение (СБП)</span>
+              <span class="tx-card__amount tx-card__amount--pos">+5&nbsp;300&nbsp;₽</span>
+            </article>
+            <div id="ops-extra" class="ops-extra" hidden>
+              <p class="ops-date">28 марта</p>
+              <article class="tx-card">
+                <div class="tx-card__icon-wrap">
+                  <img src="assets/img-sbp.png" alt="" />
+                </div>
+                <span class="tx-card__title">Пополнение (СБП)</span>
+                <span class="tx-card__amount tx-card__amount--pos">+5&nbsp;000&nbsp;₽</span>
+              </article>
+              <article class="tx-card">
+                <div class="tx-card__icon-wrap tx-card__icon-wrap--order">
+                  <img src="assets/img-order.png" alt="" />
+                </div>
+                <span class="tx-card__title">Оплата заказа</span>
+                <span class="tx-card__amount tx-card__amount--neg">-5&nbsp;000&nbsp;₽</span>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="main-grid__right">
+          <section aria-labelledby="limits-title">
+            <h2 class="section-title" id="limits-title">Лимиты</h2>
+            <div class="panel limits-panel">
+              <div class="limits-row">
+                <span>Одна покупка</span>
+                <span>до 15&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="limits-row">
+                <span>Покупки в месяц</span>
+                <span>до 40&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="progress" role="presentation">
+                <div class="progress__fill progress__fill--month" style="width: 50%"></div>
+              </div>
+              <div class="progress-meta">
+                <span>Осталось 20&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="limits-row" style="margin-top: 8px">
+                <span>Максимальный баланс</span>
+                <span>15&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="progress" role="presentation">
+                <div class="progress__fill" style="width: 53.33%"></div>
+              </div>
+              <div class="progress-meta">
+                <span>На счету 8&nbsp;000&nbsp;₽</span>
+              </div>
+              <button type="button" class="btn-outline-sm js-wallet-levels-modal-open">Увеличить лимиты</button>
+            </div>
+          </section>
+
+          <section aria-labelledby="faq-title">
+            <h2 class="section-title" id="faq-title">Вопросы и ответы</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Что такое Lamoda Кошелёк
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    Это&nbsp;электронный счёт пользователя. Им&nbsp;можно оплатить заказы на сайте и в приложении
+                    Lamoda. За&nbsp;каждую покупку с&nbsp;Кошельком начислим&nbsp;3% баллами. Баллы придут в&nbsp;течение
+                    1&nbsp;дня&nbsp;после оплаты заказа. Ими&nbsp;получится оплатить 100% стоимости следующего заказа
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Какие уровни и лимиты
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    У&nbsp;Кошелька три&nbsp;уровня: базовый, расширенный и&nbsp;максимальный. У&nbsp;них&nbsp;разные
+                    лимиты на&nbsp;суммы, которые можно хранить на&nbsp;счёте и&nbsp;тратить на&nbsp;покупки. Лимиты
+                    обновляются 1-го числа каждого месяца
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Как повысить уровень
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    В&nbsp;профиле Lamoda на&nbsp;сайте или&nbsp;в&nbsp;мобильном приложении. Ещё&nbsp;мы&nbsp;предложим
+                    повысить уровень Кошелька, если&nbsp;будете оплачивать заказ, который выходит за&nbsp;лимиты вашего
+                    текущего уровня. Для&nbsp;повышения уровня потребуется российский паспорт
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Как пополнить
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    Переводом через&nbsp;СБП. Перейдите в&nbsp;банковское приложение и&nbsp;выберите «Перевод по&nbsp;номеру
+                    телефона». Укажите свой номер и&nbsp;сумму, а&nbsp;получателем укажите «Монета» или&nbsp;НКО&nbsp;«Монета».
+                  </p>
+                  <p>
+                    Базовый Кошелёк можно пополнить, только если&nbsp;номера телефонов, привязанные к&nbsp;счёту в&nbsp;банке
+                    и&nbsp;Кошельку совпадают
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Как вернуть деньги за заказ
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    По&nbsp;обычным правилам через&nbsp;профиль или&nbsp;контакт-центр. Деньги вернутся на&nbsp;Кошелёк
+                    сразу после&nbsp;того, как&nbsp;мы&nbsp;подтвердим возврат заказа.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Можно ли вывести деньги
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    Деньги можно вывести только с&nbsp;расширенного или&nbsp;максимального уровней. В&nbsp;профиле Lamoda
+                    на&nbsp;сайте или&nbsp;в&nbsp;мобильном приложении нажмите «Вывести»: введите номер телефона, сумму
+                    и&nbsp;выберите банк получателя. Чтобы&nbsp;вывести деньги с&nbsp;базового Кошелька, перейдите на&nbsp;другой
+                    уровень.
+                  </p>
+                  <p>
+                    Для&nbsp;перевода или&nbsp;повышения уровня запросим у&nbsp;вас&nbsp;данные российского паспорта,
+                    чтобы&nbsp;подтвердить вашу личность
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-item__trigger" aria-expanded="false">
+                  Если остались вопросы
+                  <img src="assets/icon-plus.svg" alt="" />
+                </button>
+                <div class="faq-item__panel" hidden>
+                  <p>
+                    Свяжитесь с&nbsp;нами по&nbsp;телефону +7&nbsp;(495)&nbsp;134-41-63&nbsp;или&nbsp;по&nbsp;электронной
+                    почте wallet@lamoda.ru
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <div id="wallet-levels-modal" class="wallet-modal" hidden>
+      <div class="wallet-modal__backdrop js-wallet-modal-close" tabindex="-1"></div>
+      <div
+        class="wallet-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="wallet-modal-heading"
+      >
+        <button type="button" class="wallet-modal__close js-wallet-modal-close" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h2 id="wallet-modal-heading" class="wallet-modal__heading">Уровни кошелька</h2>
+        <div class="wallet-modal__cols">
+          <article class="wallet-tier wallet-tier--starter">
+            <header class="wallet-tier__head">
+              <p class="wallet-tier__eyebrow wallet-tier__eyebrow--muted">Сейчас у вас</p>
+              <p class="wallet-tier__title">Стартовый</p>
+            </header>
+            <section class="wallet-tier__card">
+              <h3 class="wallet-tier__card-title">Лимиты</h3>
+              <div class="wallet-tier__row">
+                <span>Одна покупка</span>
+                <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="wallet-tier__row">
+                <span>Покупки в месяц</span>
+                <span class="wallet-tier__val">до 40&nbsp;000&nbsp;₽</span>
+              </div>
+              <div class="wallet-tier__row">
+                <span>Максимальный баланс</span>
+                <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+              </div>
+            </section>
+            <section class="wallet-tier__card wallet-tier__card--features">
+              <h3 class="wallet-tier__card-title">Возможности</h3>
+              <div class="wallet-tier__feature">
+                <span>Кешбек 3%</span>
+                <img src="assets/modal-check.png" width="20" height="20" alt="" />
+              </div>
+              <div class="wallet-tier__feature">
+                <span>Вывод средств</span>
+                <img src="assets/modal-cross.png" width="20" height="20" alt="" />
+              </div>
+            </section>
+            <button type="button" class="wallet-tier__btn wallet-tier__btn--outline">Ваш кошелёк</button>
+          </article>
+
+          <article class="wallet-tier wallet-tier--upgrade">
+            <header class="wallet-tier__head">
+              <p class="wallet-tier__eyebrow wallet-tier__eyebrow--accent">Можно получить</p>
+              <p class="wallet-tier__title">Стандартный</p>
+            </header>
+            <section class="wallet-tier__card">
+              <h3 class="wallet-tier__card-title">Лимиты</h3>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Одна покупка</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">до 60&nbsp;000&nbsp;₽</span>
+                </span>
+              </div>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Покупки в месяц</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 40&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">до 200&nbsp;000&nbsp;₽</span>
+                </span>
+              </div>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Максимальный баланс</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">до 60&nbsp;000&nbsp;₽</span>
+                </span>
+              </div>
+            </section>
+            <section class="wallet-tier__card wallet-tier__card--features">
+              <h3 class="wallet-tier__card-title">Возможности</h3>
+              <div class="wallet-tier__feature">
+                <span>Кешбек 3%</span>
+                <img src="assets/modal-check.png" width="20" height="20" alt="" />
+              </div>
+              <div class="wallet-tier__feature">
+                <span>Вывод средств</span>
+                <img src="assets/modal-check.png" width="20" height="20" alt="" />
+              </div>
+            </section>
+            <button type="button" class="wallet-tier__btn wallet-tier__btn--primary js-confirm-modal-open">Улучшить кошелёк</button>
+          </article>
+
+          <article class="wallet-tier wallet-tier--upgrade">
+            <header class="wallet-tier__head">
+              <p class="wallet-tier__eyebrow wallet-tier__eyebrow--accent">Можно получить</p>
+              <p class="wallet-tier__title">Максимальный</p>
+            </header>
+            <section class="wallet-tier__card">
+              <h3 class="wallet-tier__card-title">Лимиты</h3>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Одна покупка</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">до 600&nbsp;000&nbsp;₽</span>
+                </span>
+              </div>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Покупки в месяц</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 40&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">безлимитно</span>
+                </span>
+              </div>
+              <div class="wallet-tier__row wallet-tier__row--compare">
+                <span>Максимальный баланс</span>
+                <span class="wallet-tier__compare">
+                  <span class="wallet-tier__val">до 15&nbsp;000&nbsp;₽</span>
+                  <img src="assets/modal-arrow.png" width="15" height="15" alt="" class="wallet-tier__arrow" />
+                  <span class="wallet-tier__val wallet-tier__val--accent">до 600&nbsp;000&nbsp;₽</span>
+                </span>
+              </div>
+            </section>
+            <section class="wallet-tier__card wallet-tier__card--features">
+              <h3 class="wallet-tier__card-title">Возможности</h3>
+              <div class="wallet-tier__feature">
+                <span>Кешбек 3%</span>
+                <img src="assets/modal-check.png" width="20" height="20" alt="" />
+              </div>
+              <div class="wallet-tier__feature">
+                <span>Вывод средств</span>
+                <img src="assets/modal-check.png" width="20" height="20" alt="" />
+              </div>
+            </section>
+            <button type="button" class="wallet-tier__btn wallet-tier__btn--primary js-confirm-modal-open">Улучшить кошелёк</button>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div id="topup-modal" class="topup-modal" hidden>
+      <div class="topup-modal__backdrop js-topup-modal-close" tabindex="-1"></div>
+      <div
+        class="topup-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="topup-modal-title"
+      >
+        <button type="button" class="topup-modal__close js-topup-modal-close" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="topup-modal__body">
+          <div class="topup-modal__hero">
+            <div class="topup-modal__spinner" role="status" aria-label="Ожидание оплаты">
+              <div class="topup-modal__spinner-ring" aria-hidden="true">
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+                <span class="topup-modal__spinner-arm"></span>
+              </div>
+            </div>
+            <h2 id="topup-modal-title" class="topup-modal__title">Ждём оплату</h2>
+            <p class="topup-modal__subtitle">
+              Когда деньги придут на Lamoda Кошелёк, они сразу спишутся для оплаты заказа
+            </p>
+          </div>
+          <h3 class="topup-modal__section-title">Как пополнить Lamoda Кошелёк</h3>
+          <div class="topup-modal__steps">
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 1</p>
+              <p class="topup-modal__step-text">
+                В приложении вашего банка выберите перевод по номеру телефона или СБП и введите свой номер телефона
+                <strong>+7 (977) 123-45-67</strong>
+              </p>
+            </div>
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 2</p>
+              <p class="topup-modal__step-text">
+                Найдите и выберите банк получателя <strong>Монета</strong> или <strong>НКО Монета</strong>
+              </p>
+            </div>
+            <div class="topup-modal__step">
+              <p class="topup-modal__step-label">Шаг 3</p>
+              <p class="topup-modal__step-text">
+                Введите сумму от <strong>6&nbsp;480&nbsp;₽</strong> и переведите её на Кошелёк
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirm-data-modal" class="confirm-modal" hidden>
+      <div class="confirm-modal__backdrop js-confirm-modal-close" tabindex="-1"></div>
+      <div
+        class="confirm-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirm-data-modal-title"
+      >
+        <button type="button" class="confirm-modal__close js-confirm-modal-close" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="confirm-modal__body">
+          <h2 id="confirm-data-modal-title" class="confirm-modal__title">Подтверждение данных</h2>
+          <p class="confirm-modal__badge">Быстрая проверка</p>
+          <h3 class="confirm-modal__subtitle">По номеру телефона</h3>
+          <p class="confirm-modal__lead">Только для абонентов:</p>
+          <div class="confirm-modal__operators" role="list">
+            <div class="confirm-modal__op" role="listitem">
+              <img src="assets/confirm-op1.svg" alt="Билайн" width="24" height="24" />
+            </div>
+            <div class="confirm-modal__op" role="listitem">
+              <img src="assets/confirm-op2.svg" alt="МегаФон" width="24" height="24" />
+            </div>
+            <div class="confirm-modal__op" role="listitem">
+              <img src="assets/confirm-op3.svg" alt="МТС" width="24" height="24" />
+            </div>
+            <div class="confirm-modal__op confirm-modal__op--t2" role="listitem">
+              <img src="assets/confirm-op4.svg" alt="t2" width="30" height="22" />
+            </div>
+          </div>
+          <p class="confirm-modal__hint">Если другой оператор — выберите проверку по паспорту</p>
+          <button type="button" class="confirm-modal__btn confirm-modal__btn--primary">Подтвердить по номеру</button>
+          <div class="confirm-modal__sep" role="presentation">
+            <span class="confirm-modal__sep-line"></span>
+            <span class="confirm-modal__sep-text">или</span>
+            <span class="confirm-modal__sep-line"></span>
+          </div>
+          <h3 class="confirm-modal__subtitle">По паспорту РФ</h3>
+          <p class="confirm-modal__lead">Введите данные вручную и пройдите проверку</p>
+          <button type="button" class="confirm-modal__btn confirm-modal__btn--outline">Указать данные паспорта</button>
+          <button type="button" class="confirm-modal__back js-confirm-modal-close">← Вернуться на сайт</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <button type="button">Возврат</button>
+        <button type="button">Центр поддержки Lamoda</button>
+        <button type="button">Часто задаваемые вопросы</button>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        document.querySelectorAll(".faq-item").forEach(function (item) {
+          var trigger = item.querySelector(".faq-item__trigger");
+          var panel = item.querySelector(".faq-item__panel");
+          if (!trigger || !panel) return;
+          trigger.addEventListener("click", function () {
+            var open = !item.classList.contains("is-open");
+            item.classList.toggle("is-open", open);
+            trigger.setAttribute("aria-expanded", open ? "true" : "false");
+            panel.hidden = !open;
+          });
+        });
+
+        var opsShowAll = document.querySelector(".js-ops-show-all");
+        var opsExtra = document.getElementById("ops-extra");
+        if (opsShowAll && opsExtra) {
+          opsShowAll.addEventListener("click", function () {
+            opsExtra.hidden = !opsExtra.hidden;
+            opsShowAll.setAttribute("aria-expanded", opsExtra.hidden ? "false" : "true");
+          });
+        }
+
+        var modal = document.getElementById("wallet-levels-modal");
+        var openers = document.querySelectorAll(".js-wallet-levels-modal-open");
+        var closers = document.querySelectorAll(".js-wallet-modal-close");
+        var confirmModal = document.getElementById("confirm-data-modal");
+        var confirmOpeners = document.querySelectorAll(".js-confirm-modal-open");
+        var confirmClosers = document.querySelectorAll(".js-confirm-modal-close");
+        var topupModal = document.getElementById("topup-modal");
+        var topupOpeners = document.querySelectorAll(".js-topup-modal-open");
+        var topupClosers = document.querySelectorAll(".js-topup-modal-close");
+        var lastFocus = null;
+        var lastFocusConfirm = null;
+        var lastFocusTopup = null;
+
+        function refreshScrollLock() {
+          var lock =
+            (modal && !modal.hidden) ||
+            (confirmModal && !confirmModal.hidden) ||
+            (topupModal && !topupModal.hidden);
+          document.body.classList.toggle("modal-scroll-lock", lock);
+        }
+
+        function openModal() {
+          if (!modal) return;
+          lastFocus = document.activeElement;
+          modal.hidden = false;
+          refreshScrollLock();
+          var closeBtn = modal.querySelector(".wallet-modal__close");
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+          if (!modal || modal.hidden) return;
+          modal.hidden = true;
+          refreshScrollLock();
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        }
+
+        function openConfirmModal() {
+          if (!confirmModal) return;
+          lastFocusConfirm = document.activeElement;
+          confirmModal.hidden = false;
+          refreshScrollLock();
+          var closeBtn = confirmModal.querySelector(".confirm-modal__close");
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeConfirmModal() {
+          if (!confirmModal || confirmModal.hidden) return;
+          confirmModal.hidden = true;
+          refreshScrollLock();
+          if (lastFocusConfirm && typeof lastFocusConfirm.focus === "function") {
+            lastFocusConfirm.focus();
+          }
+        }
+
+        function openTopupModal() {
+          if (!topupModal) return;
+          lastFocusTopup = document.activeElement;
+          topupModal.hidden = false;
+          refreshScrollLock();
+          var closeBtn = topupModal.querySelector(".topup-modal__close");
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeTopupModal() {
+          if (!topupModal || topupModal.hidden) return;
+          topupModal.hidden = true;
+          refreshScrollLock();
+          if (lastFocusTopup && typeof lastFocusTopup.focus === "function") {
+            lastFocusTopup.focus();
+          }
+        }
+
+        openers.forEach(function (btn) {
+          btn.addEventListener("click", openModal);
+        });
+        closers.forEach(function (el) {
+          el.addEventListener("click", closeModal);
+        });
+        confirmOpeners.forEach(function (btn) {
+          btn.addEventListener("click", openConfirmModal);
+        });
+        confirmClosers.forEach(function (el) {
+          el.addEventListener("click", closeConfirmModal);
+        });
+        topupOpeners.forEach(function (btn) {
+          btn.addEventListener("click", openTopupModal);
+        });
+        topupClosers.forEach(function (el) {
+          el.addEventListener("click", closeTopupModal);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key !== "Escape") return;
+          if (topupModal && !topupModal.hidden) closeTopupModal();
+          else if (confirmModal && !confirmModal.hidden) closeConfirmModal();
+          else if (modal && !modal.hidden) closeModal();
+        });
+      })();
+    </script>
+  </body>
+</html>
