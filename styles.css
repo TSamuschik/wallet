@@ -1359,3 +1359,314 @@ body.modal-scroll-lock {
   font-weight: 700;
   color: #000;
 }
+
+/* ——— Мобильная версия (index): карточки в колонку, фон страницы, слайдер уровней, компактные модалки ——— */
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .header-top {
+    padding: 12px 0 10px;
+    min-height: 0;
+  }
+
+  .header-top__center {
+    display: none;
+  }
+
+  .header-nav-row {
+    display: none;
+  }
+
+  .page-wrap {
+    padding: 12px 16px 28px;
+  }
+
+  .main-grid {
+    gap: 0;
+  }
+
+  .balance-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 10px;
+    padding: 14px 14px 16px;
+    box-shadow: none;
+  }
+
+  .balance-card__amount {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .balance-card__actions {
+    gap: 8px;
+  }
+
+  .balance-card__actions .btn-primary,
+  .balance-card__actions .btn-secondary {
+    flex: 1;
+    min-width: 0;
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+
+  .panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 10px;
+    padding: 14px 14px 15px;
+    box-shadow: none;
+  }
+
+  .level-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn-outline-sm {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .limits-panel .btn-outline-sm {
+    margin-top: 4px;
+  }
+
+  .ops-head {
+    margin-bottom: 8px;
+  }
+
+  .ops-date {
+    margin: 12px 0 6px;
+  }
+
+  .tx-card {
+    padding: 12px 12px;
+    margin-bottom: 6px;
+  }
+
+  .limits-row {
+    margin-bottom: 12px;
+  }
+
+  .limits-row + .limits-row {
+    margin-top: 16px;
+  }
+
+  .faq-item__trigger {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .site-footer .footer-inner {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Модалка уровней: нижний лист + горизонтальный свайп карточек */
+  .wallet-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .wallet-modal__panel {
+    width: 100%;
+    max-width: none;
+    max-height: min(92dvh, 720px);
+    padding: 44px 0 16px;
+    border-radius: 12px 12px 0 0;
+    overflow-x: visible;
+    overflow-y: auto;
+  }
+
+  .wallet-modal__close {
+    top: 6px;
+    right: 10px;
+  }
+
+  .wallet-modal__cols {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    grid-template-columns: unset;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 16px 12px;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: visible;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 16px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scrollbar-width: thin;
+  }
+
+  .wallet-modal__cols > .wallet-tier {
+    flex: 0 0 min(calc(100vw - 80px), 300px);
+    width: min(calc(100vw - 80px), 300px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+
+  .wallet-tier__btn {
+    margin-top: auto;
+  }
+
+  /* «Ждём оплату»: компактнее */
+  .topup-modal {
+    padding: 12px;
+  }
+
+  .topup-modal__panel {
+    max-width: none;
+    border-radius: 12px;
+    max-height: calc(100vh - 24px);
+  }
+
+  .topup-modal__body {
+    padding: 40px 16px 20px;
+  }
+
+  .topup-modal__close {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .topup-modal__spinner {
+    margin-bottom: 10px;
+  }
+
+  .topup-modal__spinner-ring {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topup-modal__spinner-arm {
+    height: 16px;
+  }
+
+  .topup-modal__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  .topup-modal__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .topup-modal__section-title {
+    margin: 18px 0 10px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .topup-modal__steps {
+    gap: 8px;
+  }
+
+  .topup-modal__step {
+    padding: 12px;
+  }
+
+  .topup-modal__step-label {
+    font-size: 13px;
+  }
+
+  .topup-modal__step-text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  /* Подтверждение личности: компактнее */
+  .confirm-modal {
+    padding: 12px;
+  }
+
+  .confirm-modal__panel {
+    max-height: calc(100vh - 24px);
+    border-radius: 12px;
+  }
+
+  .confirm-modal__body {
+    padding: 44px 16px 20px;
+  }
+
+  .confirm-modal__close {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .confirm-modal__title {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 12px;
+  }
+
+  .confirm-modal__subtitle {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .confirm-modal__lead {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .confirm-modal__operators {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .confirm-modal__op {
+    min-height: 52px;
+    padding: 6px;
+  }
+
+  .confirm-modal__hint {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 14px;
+  }
+
+  .confirm-modal__btn {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .confirm-modal__sep {
+    margin: 16px 0 14px;
+  }
+
+  .confirm-modal__back {
+    margin-top: 16px;
+  }
+}
